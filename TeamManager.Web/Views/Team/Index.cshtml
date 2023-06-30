@@ -1,8 +1,8 @@
 ﻿@model TeamManager.Web.Models.Team.TeamListViewModel
 
-<h3 class="page-title" style="width: 15.5%; font-size: 2.4rem;">Equipes</h3>
+<h3 class="page-title">Equipes</h3>
 
-<a type="button" class="btn btn-secondary mt-3" href='@Url.Action("Create")' ><i class="fa fa-plus"></i> Nova Equipe</a>
+<a type="button" class="btn btn-success" href='@Url.Action("Create")' ><i class="fa fa-plus"></i> Nova Equipe</a>
 
 <div class="row g-3 mt-5">
     @foreach(var team in Model.Teams)

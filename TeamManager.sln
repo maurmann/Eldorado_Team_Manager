@@ -9,13 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamManager.DataAccess", "T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamManager.Web", "TeamManager.Web\TeamManager.Web.csproj", "{55057498-6E4C-4F3B-9C67-888629ADBF77}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Layer", "Business Layer", "{A86FAF37-450A-4C20-8E38-D89AB46E49DB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{A86FAF37-450A-4C20-8E38-D89AB46E49DB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure Layer", "Infrastructure Layer", "{C1B1FF20-92D6-437E-A960-75BA8EED3991}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{C1B1FF20-92D6-437E-A960-75BA8EED3991}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application Layer", "Application Layer", "{7C7E30A1-01E0-4DB1-A3E3-45F6087E74DC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{7C7E30A1-01E0-4DB1-A3E3-45F6087E74DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamManager.Application", "TeamManager.Application\TeamManager.Application.csproj", "{1A0EEB15-3FD1-4883-B1AB-87F0B8A14405}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamManager.Application", "TeamManager.Application\TeamManager.Application.csproj", "{1A0EEB15-3FD1-4883-B1AB-87F0B8A14405}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

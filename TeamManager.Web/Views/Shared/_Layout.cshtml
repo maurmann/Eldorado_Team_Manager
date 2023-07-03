@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eldorado Team Manager</title>
+    <title>Gerenciador de Habilidades por Equipe</title>
 
     <link rel="stylesheet" href="~/lib/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -24,14 +24,29 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Team Skills</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Habilidades por Equipe</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown" aria-expanded="false" asp-area="" asp-controller="Home" asp-action="Privacy">Administration</a>
+                            <a class="nav-link dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown" aria-expanded="false" asp-area="" asp-controller="Home" asp-action="Privacy">Cadastros</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item text-dark" role="button" asp-area="" asp-controller="Team" asp-action="Index">Teams</a></li>
-                                <li><a class="dropdown-item text-dark" role="button" asp-area="" asp-controller="Collaborator" asp-action="Index">Collaborators</a></li>
-                                <li><a class="dropdown-item text-dark" role="button" asp-area="" asp-controller="Skills" asp-action="Index">Skills</a></li>
+                                <li>
+                                    <a class="dropdown-item text-dark" role="button" asp-area="" asp-controller="Team" asp-action="Index">Equipes</a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item text-dark" role="button" asp-area="" asp-controller="Collaborator" asp-action="Index">Colaboradores</a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item text-dark" role="button" asp-area="" asp-controller="Skills" asp-action="Index">Habilidades</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item text-dark" role="button" asp-area="" asp-controller="Skills" asp-action="Index">Tipos de Habilidades</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -41,7 +56,7 @@
         </main>
         <footer class="border-top footer text-muted" style="margin-top: 50px">
             <div class="container">
-                &copy; 2023 - Instituto Eldorado - Team Manager
+                &copy; 2023 - Instituto Eldorado - Gerenciador de Habilidades por Equipe
             </div>
         </footer>
     </div>

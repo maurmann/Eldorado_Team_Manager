@@ -13,7 +13,7 @@ namespace TeamManager.Web.Controllers
             _teamService = teamService;
         }
 
-        public IActionResult Index()
+        public IActionResult Manage()
         {
             var teams = _teamService.ListAll();
             var teamListViewModel = new TeamListViewModel(teams);

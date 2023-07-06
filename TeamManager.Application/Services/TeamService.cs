@@ -18,5 +18,16 @@ namespace TeamManager.Application.Services
             var teams = _teamRepository.GetAll();
             return teams;
         }
+
+        public Team GetById(int id)
+        {
+            var team = _teamRepository.GetById(id);
+            return team;
+        }
+
+        public void Delete(int id)
+        {
+            _teamRepository.Delete(id);
+        }
     }
 }

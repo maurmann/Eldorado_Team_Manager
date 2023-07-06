@@ -16,9 +16,33 @@ namespace TeamManager.DataAccess.Repositories
 
         public IEnumerable<Team> GetAll()
         {
-            return _dbContext.Teams
+            var teamList = _dbContext.Teams
                  .AsNoTracking()
+                 .OrderBy(x => x.Name)
                  .ToList();
+
+            return teamList;
+        }
+
+        public Team? GetById(int id)
+        {
+            var team = _dbContext.Teams
+                .AsNoTracking()
+                .FirstOrDefault(x => x.Id == id);
+
+            return team;
+        }
+
+        public void Delete(int id)
+        {
+            var team = _dbContext.Teams
+                .FirstOrDefault(x => x.Id == id);
+
+            if (team != null)
+            {
+                _dbContext.Remove(team);
+                _dbContext.SaveChanges();
+            }
         }
     }
 }

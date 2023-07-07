@@ -1,0 +1,14 @@
+.title{
+    font-size: large;
+    color: black;
+    margin-left: 20px;
+    margin-right: 30px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+}
+
+

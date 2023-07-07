@@ -15,7 +15,7 @@ namespace TeamManager.Web.Controllers
 
         public IActionResult Index()
         {
-            return RedirectToAction("Index", "Team");
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

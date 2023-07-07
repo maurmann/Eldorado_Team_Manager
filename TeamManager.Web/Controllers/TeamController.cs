@@ -34,7 +34,7 @@ namespace TeamManager.Web.Controllers
             return View(teamListViewModel);
         }
 
-        public IActionResult DeleteConfirmation(int id)
+        public IActionResult DeleteConfirm(int id)
         {
             var team = _teamService.GetById(id);
             return View(team);

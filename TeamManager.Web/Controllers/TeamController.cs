@@ -29,10 +29,11 @@ namespace TeamManager.Web.Controllers
             return View(team);
         }
 
-        public IActionResult DeleteConfirm(string hash)
+        public IActionResult DeleteConfirm(int id, string hash)
         {
-            var id = HashIdHelper.Decode(hash);
-            _teamService.Delete(id);
+            var decodedId = HashIdHelper.Decode(hash);
+            if (decodedId == id)
+                _teamService.Delete(id);
 
             return RedirectToAction("List");
         }

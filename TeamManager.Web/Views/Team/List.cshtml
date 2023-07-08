@@ -4,7 +4,7 @@
 <h4>Cadastrar Equipes</h4>
 <p class="fw-medium">Lista das equipes cadastradas</p>
 
-<button type="button" class="btn btn-success"><i class="fa-solid fa-plus"></i> Adicionar</button>
+<a class="btn btn-success" role="button" href="@Url.Action("New","Team")"><i class="fa-solid fa-plus"></i> Adicionar</a>
 
 <table class="table table-hover">
     <thead>
@@ -22,12 +22,12 @@
                 <th scope="row" class="align-middle">@team.Id</th>
                 <td class="align-middle">@team.Name</td>
                 <td class="align-middle" style="text-align: center">
-                    <a class="btn btn-link" role="button" href="@Url.Action("Form","Team",new { id = team.Id })">
+                    <a class="btn btn-link" role="button" href="@Url.Action("Edit","Team",new { id = team.Id })">
                         <i class="fa-sharp fa-regular fa-pen-to-square"></i>
                     </a>
                 </td>
                 <td class="align-middle" style="text-align: center">
-                    <a class="btn btn-link" role="button" href="@Url.Action("DeleteConfirmation","Team",new { id = team.Id })">
+                    <a class="btn btn-link" role="button" href="@Url.Action("DeleteConfirm","Team",new { id = team.Id })">
                         <i class="fa-sharp fa-solid fa-trash"></i>
                     </a>
                 </td>

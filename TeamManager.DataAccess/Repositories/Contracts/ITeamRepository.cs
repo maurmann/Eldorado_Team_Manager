@@ -7,5 +7,7 @@ namespace TeamManager.DataAccess.Repositories.Contracts
         public IEnumerable<Team> GetAll();
         public Team GetById(int id);
         public void Delete(int id);
+        public void Insert(Team team);
+        public void Update(Team team);
     }
 }

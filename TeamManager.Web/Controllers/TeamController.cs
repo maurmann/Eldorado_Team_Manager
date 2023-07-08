@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TeamManager.Application.Services.Contracts;
+using TeamManager.Domain.Entities;
 using TeamManager.Web.Models.Team;
 
 namespace TeamManager.Web.Controllers
@@ -13,21 +14,7 @@ namespace TeamManager.Web.Controllers
             _teamService = teamService;
         }
 
-        public IActionResult Index()
-        {
-            var teams = _teamService.ListAll();
-            var teamListViewModel = new TeamListViewModel(teams);
-            return View(teamListViewModel);
-        }
-
         public IActionResult List()
-        {
-            var teams = _teamService.ListAll();
-            var teamListViewModel = new TeamListViewModel(teams);
-            return View(teamListViewModel);
-        }
-
-        public IActionResult Form(int id)
         {
             var teams = _teamService.ListAll();
             var teamListViewModel = new TeamListViewModel(teams);
@@ -45,5 +32,30 @@ namespace TeamManager.Web.Controllers
             _teamService.Delete(id);
             return RedirectToAction("List");
         }
+
+        public IActionResult New()
+        {
+            return View("Form");
+        }
+
+        public IActionResult Edit(int id)
+        {
+            var team = _teamService.GetById(id);
+            return View("Form", team);
+        }
+
+        public IActionResult Save(Team team)
+        {
+            ModelState.Remove("Id");
+
+            if (ModelState.IsValid)
+            {
+                _teamService.Save(team);
+                return RedirectToAction("List");
+            }
+            else
+                return View("Form", team);
+        }
+
     }
 }

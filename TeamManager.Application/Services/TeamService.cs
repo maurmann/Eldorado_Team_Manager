@@ -29,5 +29,13 @@ namespace TeamManager.Application.Services
         {
             _teamRepository.Delete(id);
         }
+
+        public void Save(Team team)
+        {
+            if (team.Id == 0)
+                _teamRepository.Insert(team);
+            else 
+                _teamRepository.Update(team);
+        }
     }
 }

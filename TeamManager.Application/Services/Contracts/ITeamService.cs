@@ -7,5 +7,6 @@ namespace TeamManager.Application.Services.Contracts
         public IEnumerable<Team> ListAll();
         public Team GetById(int id);
         public void Delete(int id);
+        public void Save(Team team);
     }
 }

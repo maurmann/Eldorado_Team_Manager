@@ -44,5 +44,18 @@ namespace TeamManager.DataAccess.Repositories
                 _dbContext.SaveChanges();
             }
         }
+
+        public void Insert(Team team)
+        {
+            _dbContext.Teams.Add(team);
+            _dbContext.SaveChanges();
+        }
+
+        public void Update(Team team)
+        {
+            _dbContext.Teams.Attach(team);
+            _dbContext.Entry(team).State = EntityState.Modified;
+            _dbContext.SaveChanges();
+        }
     }
 }

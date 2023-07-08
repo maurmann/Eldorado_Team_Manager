@@ -34,7 +34,7 @@ namespace TeamManager.Application.Services
         {
             if (team.Id == 0)
                 _teamRepository.Insert(team);
-            else 
+            else
                 _teamRepository.Update(team);
         }
     }

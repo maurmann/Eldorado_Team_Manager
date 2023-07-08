@@ -2,7 +2,7 @@
 
 namespace TeamManager.Domain.Repositories
 {
-    public interface ITeamRepository 
+    public interface ITeamRepository
     {
         public IEnumerable<Team> GetAll();
         public Team GetById(int id);

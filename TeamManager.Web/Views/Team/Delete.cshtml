@@ -21,6 +21,6 @@
         </div>
         <p></p>
         <a class="btn btn-secondary" role="button" href="@Url.Action("List")">Cancelar</a>
-        <a class="btn btn-danger" role="button" href="@Url.Action("DeleteExecute","Team",new { id = Model.Id})">Excluir</a>
+        <a class="btn btn-danger" role="button" href="@Url.Action("DeleteConfirm","Team",new { hash = ViewBag.HashId })">Excluir</a>
     </div>
 </div>

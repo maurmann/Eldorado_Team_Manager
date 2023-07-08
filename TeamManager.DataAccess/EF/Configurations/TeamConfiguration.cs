@@ -8,7 +8,7 @@ namespace TeamManager.DataAccess.EF.Configurations
     {
         public void Configure(EntityTypeBuilder<Team> builder)
         {
-            builder.HasKey(x=>x.Id);
+            builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).ValueGeneratedOnAdd();
         }
     }

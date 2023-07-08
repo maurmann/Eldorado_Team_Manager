@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TeamManager.Application.Services.Contracts;
 using TeamManager.Domain.Entities;
+using TeamManager.Web.Helpers;
 using TeamManager.Web.Models.Team;
 
 namespace TeamManager.Web.Controllers
@@ -21,15 +22,18 @@ namespace TeamManager.Web.Controllers
             return View(teamListViewModel);
         }
 
-        public IActionResult DeleteConfirm(int id)
+        public IActionResult Delete(int id)
         {
             var team = _teamService.GetById(id);
+            ViewBag.HashId = HashIdHelper.Encode(id);
             return View(team);
         }
 
-        public IActionResult DeleteExecute(int id)
+        public IActionResult DeleteConfirm(string hash)
         {
+            var id = HashIdHelper.Decode(hash);
             _teamService.Delete(id);
+
             return RedirectToAction("List");
         }
 

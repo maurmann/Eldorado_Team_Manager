@@ -4,8 +4,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace TeamManager.Domain.Entities
 {
     [Table("team")]
-    public class Team : BaseEntity
+    public class Team 
     {
+        [Key]
+        [Column("id")]
+        public int Id { get; set; }
+
         [Column("name")]
         [Display(Name = "Nome")]
         [Required(AllowEmptyStrings=false,ErrorMessage = "Por favor informe o nome da equipe")]

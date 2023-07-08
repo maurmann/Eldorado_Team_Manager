@@ -3,8 +3,9 @@ using TeamManager.Application.Services;
 using TeamManager.Application.Services.Contracts;
 using TeamManager.DataAccess.EF;
 using TeamManager.DataAccess.Repositories;
-using TeamManager.DataAccess.Repositories.Contracts;
+using TeamManager.Domain.Repositories;
 
+// Default ASP .NET MVC Builder
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
@@ -20,23 +21,18 @@ builder.Services.AddEntityFrameworkNpgsql().AddDbContext<TeamManagerDbContext>(o
         });
 });
 
-
+// Register Services
 builder.Services.AddScoped<ITeamService, TeamService>();
 
+// Register Repositories
 builder.Services.AddScoped<ITeamRepository, TeamRepository>();
 
-
-
+// Default ASP .NET Mvc App Setup
 var app = builder.Build();
-
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
 app.Run();

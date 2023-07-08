@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TeamManager.DataAccess.EF;
-using TeamManager.DataAccess.Repositories.Contracts;
 using TeamManager.Domain.Entities;
+using TeamManager.Domain.Repositories;
 
 namespace TeamManager.DataAccess.Repositories
 {

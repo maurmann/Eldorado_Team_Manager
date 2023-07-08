@@ -1,6 +1,6 @@
 ﻿using TeamManager.Domain.Entities;
 
-namespace TeamManager.DataAccess.Repositories.Contracts
+namespace TeamManager.Domain.Repositories
 {
     public interface ITeamRepository 
     {

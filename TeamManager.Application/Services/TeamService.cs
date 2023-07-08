@@ -1,6 +1,6 @@
 ﻿using TeamManager.Application.Services.Contracts;
-using TeamManager.DataAccess.Repositories.Contracts;
 using TeamManager.Domain.Entities;
+using TeamManager.Domain.Repositories;
 
 namespace TeamManager.Application.Services
 {

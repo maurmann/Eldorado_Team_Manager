@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TeamManager.Application.Services.Contracts;
+using TeamManager.Application.Services.Team;
 using TeamManager.Domain.Entities;
 using TeamManager.Web.Helpers;
 using TeamManager.Web.Models.Team;

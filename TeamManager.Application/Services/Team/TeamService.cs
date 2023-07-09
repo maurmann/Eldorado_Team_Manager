@@ -1,8 +1,7 @@
-﻿using TeamManager.Application.Services.Contracts;
-using TeamManager.Domain.Entities;
-using TeamManager.Domain.Repositories;
+﻿using TeamManager.Domain.Repositories;
+using Entity = TeamManager.Domain.Entities;
 
-namespace TeamManager.Application.Services
+namespace TeamManager.Application.Services.Team
 {
     public class TeamService : ITeamService
     {
@@ -13,13 +12,13 @@ namespace TeamManager.Application.Services
             _teamRepository = teamRepository;
         }
 
-        public IEnumerable<Team> ListAll()
+        public IEnumerable<Entity.Team> ListAll()
         {
             var teams = _teamRepository.GetAll();
             return teams;
         }
 
-        public Team GetById(int id)
+        public Entity.Team GetById(int id)
         {
             var team = _teamRepository.GetById(id);
             return team;
@@ -30,7 +29,7 @@ namespace TeamManager.Application.Services
             _teamRepository.Delete(id);
         }
 
-        public void Save(Team team)
+        public void Save(Entity.Team team)
         {
             if (team.Id == 0)
                 _teamRepository.Insert(team);

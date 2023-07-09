@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using TeamManager.Application.Services;
-using TeamManager.Application.Services.Contracts;
+using Services = TeamManager.Application.Services;
 using TeamManager.DataAccess.EF;
 using TeamManager.DataAccess.Repositories;
 using TeamManager.Domain.Repositories;
@@ -22,7 +21,7 @@ builder.Services.AddEntityFrameworkNpgsql().AddDbContext<TeamManagerDbContext>(o
 });
 
 // Register Services
-builder.Services.AddScoped<ITeamService, TeamService>();
+builder.Services.AddScoped<Services.Team.ITeamService, Services.Team.TeamService>();
 
 // Register Repositories
 builder.Services.AddScoped<ITeamRepository, TeamRepository>();

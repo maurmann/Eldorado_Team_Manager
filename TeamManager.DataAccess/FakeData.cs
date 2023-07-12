@@ -14,7 +14,7 @@ namespace TeamManager.DataAccess
                 .RuleFor(c => c.Name, f => f.Name.FullName())
                 .RuleFor(c => c.Email, f => f.Internet.Email())
                 .RuleFor(c => c.UnitId, f => f.PickRandom(new int[] { 1, 2, 3, 4 }))
-                .RuleFor(c => c.TeamId, f => f.PickRandom(new int?[] { null, 20, 21, 22, 29, 38, 39, 40, 41 }));
+                .RuleFor(c => c.TeamId, f => f.PickRandom (new int?[] { null, 1,2,3,4,5,6,7,8,9,10 }));
 
             var collaborators = collaboratorFaker.Generate(10_000);
 
@@ -30,8 +30,18 @@ namespace TeamManager.DataAccess
 
             foreach (var collaborator in distinctCollaborators)
             {
+                var email = string.Empty;
+
                 var names = collaborator.Name.Split(' ');
-                var email = string.Concat(RemoveAccents(names[0].ToLower()), ".", RemoveAccents(names[1].ToLower()), "@eldorado.org.br");
+                foreach (var name in names)
+                {
+                    if (!string.IsNullOrWhiteSpace(email))
+                        email += ".";
+
+                    email += RemoveAccents(name).ToLower();
+                }
+                email += "@eldorado.org.br";
+                
                 collaborator.Email = email;
             }
 

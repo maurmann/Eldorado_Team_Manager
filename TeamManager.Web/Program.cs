@@ -8,8 +8,11 @@ using TeamManager.Domain.Repositories;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
+// EF Core configuration
 builder.Services.AddEntityFrameworkNpgsql().AddDbContext<TeamManagerDbContext>(options =>
 {
+    // EF Core configured to PostgreSQL
+    // Check if the version matchs
     options.UseNpgsql(
         builder.Configuration.GetConnectionString("EldoradoTeamManager"),
         opts =>

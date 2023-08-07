@@ -1,0 +1,47 @@
+﻿@using TeamManager.Web.Models.Collaborator
+@model CollaboratorListViewModel
+
+<h4>Cadastrar Colaboradores</h4>
+<p class="fw-medium">Lista dos colaboradores cadastrados</p>
+
+<a class="btn btn-success" role="button" href="@Url.Action("New","Collaborator")"><i class="fa-solid fa-plus"></i> Adicionar</a>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col" style="width: 10%">Id</th>
+            <th scope="col" style="width: 70%">Nome</th>
+            <th scope="col" style="width: 70%">E-mail</th>
+            <th scope="col" style="width: 70%">Unidade</th>
+            <th scope="col" style="width: 70%">Equipe</th>
+            <th scope="col" style="width: 10%; text-align:center">Editar</th>
+            <th scope="col" style="width: 10%; text-align:center">Excluir</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        @foreach (var collaborator in Model?.PaginatedList?.Collaborators)
+        {
+            <tr>
+                <th scope="row" class="align-middle">@collaborator.Id</th>
+                <td class="align-middle">@collaborator.Name</td>
+                <td class="align-middle">@collaborator.Name</td>
+                <td class="align-middle">@collaborator.Name</td>
+                <td class="align-middle">@collaborator.Name</td>
+                <td class="align-middle" style="text-align: center">
+                    <a class="btn btn-link" role="button" href="@Url.Action("Edit","Team",new { id = collaborator.Id })">
+                        <i class="fa-sharp fa-regular fa-pen-to-square"></i>
+                    </a>
+                </td>
+                <td class="align-middle" style="text-align: center">
+                    <a class="btn btn-link" role="button" href="@Url.Action("Delete","Team",new { id = collaborator.Id })">
+                        <i class="fa-sharp fa-solid fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p class="fst-light">@Model.PaginatedList.Collaborators.Count() equipes(s) cadastrada(s)</p>
+

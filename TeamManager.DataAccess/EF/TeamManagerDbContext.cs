@@ -9,7 +9,7 @@ namespace TeamManager.DataAccess.EF
         {
         }
 
-
         public DbSet<Team> Teams { get; set; }
+        public DbSet<Collaborator> Collaborators { get; set; }
     }
 }

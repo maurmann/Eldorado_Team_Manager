@@ -25,9 +25,11 @@ builder.Services.AddEntityFrameworkNpgsql().AddDbContext<TeamManagerDbContext>(o
 
 // Register Services
 builder.Services.AddScoped<Services.Team.ITeamService, Services.Team.TeamService>();
+builder.Services.AddScoped<Services.Collaborator.ICollaboratorService, Services.Collaborator.CollaboratorService>();
 
 // Register Repositories
 builder.Services.AddScoped<ITeamRepository, TeamRepository>();
+builder.Services.AddScoped<ICollaboratorRepository, CollaboratorRepository>();
 
 // Default ASP .NET Mvc App Setup
 var app = builder.Build();
